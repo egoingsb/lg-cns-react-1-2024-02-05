@@ -39,7 +39,7 @@ function Counter({title, initValue}){
       <input type="number" value={step} onChange={(evt)=>{
         setStep(Number(evt.target.value));
       }} />
-      <button onClick={up}>+</button> {value}
+      <button onClick={up} className="btn">+</button> {value}
       <ol>
           {history.map((item,index)=>{
             return <li key={index}>{item}</li>
