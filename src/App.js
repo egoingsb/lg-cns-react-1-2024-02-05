@@ -1,14 +1,14 @@
 import './App.css';
 import {useState} from 'react';
 function Counter({title, initValue}){
-  // const valueState = useState(initValue);
-  // const value = valueState[0];
-  // const setValue = valueState[1];
-
   const [value, setValue] = useState(initValue);
+  const [step, setStep] = useState(1);
   return (
     <div>
       <h1>{title}</h1>
+      <input type="number" value={step} onChange={(evt)=>{
+        setStep(evt.target.value);
+      }} />
       <button onClick={()=>setValue(value + 1)}>+</button> {value}
     </div>
   )
