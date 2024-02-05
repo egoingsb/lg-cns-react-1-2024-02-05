@@ -32,9 +32,10 @@ function Counter({title, initValue}){
     newHistory.push(newValue);
     setHistory(newHistory);
   }
+  const h1Text = {color:'red', fontSize:'30px'}
   return (
     <div>
-      <h1>{title}</h1>
+      <h1 style={h1Text}>{title}</h1>
       <input type="number" value={step} onChange={(evt)=>{
         setStep(Number(evt.target.value));
       }} />
