@@ -15,10 +15,18 @@ function Counter({title, initValue}){
   const up = ()=>{
     const newValue = value+step;
     setValue(newValue);
-    
-    // 잘못된 사례
-    // history.push(newValue);
-    // setHistory(history);
+
+    fetch('http://localhost:9999/counter/',{
+      method:'PUT',
+      headers:{
+        'Content-Type':'application/json'
+      },
+      body:JSON.stringify({value:newValue})
+    })
+      .then(resp=>resp.json())
+      .then(result=>{
+        console.log(result);
+      })
 
     const newHistory = [...history];
     newHistory.push(newValue);
