@@ -7,9 +7,9 @@ function Counter({title, initValue}){
     <div>
       <h1>{title}</h1>
       <input type="number" value={step} onChange={(evt)=>{
-        setStep(evt.target.value);
+        setStep(Number(evt.target.value));
       }} />
-      <button onClick={()=>setValue(value + 1)}>+</button> {value}
+      <button onClick={()=>setValue(value + step)}>+</button> {value}
     </div>
   )
 }
