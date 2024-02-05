@@ -4,13 +4,10 @@ function Counter({title, initValue}){
   const valueState = useState(initValue);
   const value = valueState[0];
   const setValue = valueState[1];
-  
   return (
     <div>
       <h1>{title}</h1>
-      <button onClick={function (){
-        setValue(value + 1);
-      }}>+</button> {value}
+      <button onClick={()=>setValue(value + 1)}>+</button> {value}
     </div>
   )
 }
