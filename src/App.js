@@ -1,10 +1,17 @@
 import './App.css';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 function Counter({title, initValue}){
   const [value, setValue] = useState(initValue);
   const [step, setStep] = useState(1);
   const [history, setHistory] = useState([]);
-  console.log('history', history);
+  useEffect(()=>{
+    fetch('http://localhost:9999/counter')
+    .then(resp=>resp.json())
+    .then(result=>{
+         setValue(result.value);
+    })
+  },[]);
+ 
   const up = ()=>{
     const newValue = value+step;
     setValue(newValue);
