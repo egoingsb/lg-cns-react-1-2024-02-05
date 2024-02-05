@@ -1,5 +1,7 @@
 import './App.css';
 import {useState, useEffect} from 'react';
+import style from './App.module.css';
+console.log('style', style.layout);
 function Counter({title, initValue}){
   const [value, setValue] = useState(initValue);
   const [step, setStep] = useState(1);
@@ -34,7 +36,7 @@ function Counter({title, initValue}){
   }
   const h1Text = {color:'red', fontSize:'30px'}
   return (
-    <div>
+    <div className={style.layout}>
       <h1 style={h1Text}>{title}</h1>
       <input type="number" value={step} onChange={(evt)=>{
         setStep(Number(evt.target.value));
